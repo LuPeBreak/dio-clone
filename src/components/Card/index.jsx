@@ -14,10 +14,10 @@ import {
 function Card() {
   return (
     <CardContainer>
-      <ImageBackground />
+      <ImageBackground src="https://imagekit.io/blog/content/images/2020/12/image-resizing-html.jpg" />
       <Content>
         <UserInfo>
-          <UserPicture />
+          <UserPicture src="https://avatars.githubusercontent.com/u/21126750?v=4" />
           <div>
             <h4>Luis Felipe</h4>
             <p>Há 8 minutos</p>
