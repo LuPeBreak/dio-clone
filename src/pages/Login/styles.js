@@ -16,6 +16,8 @@ export const Wrapper = styled.div`
   max-width: 300px;
 `;
 
+
+
 export const Column = styled.div`
   display: flex;
   align-items: center;
