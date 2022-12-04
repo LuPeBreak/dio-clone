@@ -1,6 +1,9 @@
-import Header from "../../components/Header";
-
+import { useNavigate } from "react-router-dom";
 import { MdEmail, MdLock } from "react-icons/md";
+
+import Header from "../../components/Header";
+import Button from "../../components/Button/index";
+import Input from "../../components/Input/index";
 
 import {
   Column,
@@ -14,10 +17,14 @@ import {
   Wrapper,
 } from "./styles";
 
-import Button from "../../components/Button/index";
-import Input from "../../components/Input/index";
+
+
 
 export default function Login() {
+  const navigate = useNavigate();
+  const handleClickSignIn = () => {
+    navigate("/feed");
+  };
   return (
     <>
       <Header />
@@ -37,7 +44,7 @@ export default function Login() {
             <form>
               <Input placeholder="E-mail" leftIcon={<MdEmail/>} />
               <Input placeholder="Senha" type="password" leftIcon={<MdLock/>} />
-              <Button title={"Entrar"} variant="secondary" />
+              <Button title={"Entrar"} variant="secondary" onClick={handleClickSignIn} type="button"/>
             </form>
 
             <Row>

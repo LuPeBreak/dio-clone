@@ -9,7 +9,7 @@ import UserInfo from "../../components/UserInfo/index";
 export default function Feed() {
   return (
     <>
-      <Header />
+      <Header authenticated={true} />
       <Container>
         <Column flex={3}>
           <Title>Feed</Title>

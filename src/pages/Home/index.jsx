@@ -1,13 +1,17 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import Header from "../../components/Header";
+import Button from "../../components/Button/index";
 
 import banner from "../../assets/banner.png";
 
 import { Container, TextContent, Title, TitleHighlight } from "./styles";
-import Button from "../../components/Button/index";
 
 export default function Home() {
+  const navigate = useNavigate();
+  const handleClickSignIn = () => {
+    navigate("/login");
+  };
   return (
     <>
       <Header />
@@ -28,7 +32,7 @@ export default function Home() {
           <Button
             title="Começar agora"
             variant="secondary"
-            onClick={() => {}}
+            onClick={handleClickSignIn}
           />
         </div>
         <div>
