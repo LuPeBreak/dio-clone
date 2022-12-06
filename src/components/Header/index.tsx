@@ -12,11 +12,12 @@ import {
   MenuRight,
   Row,
   Wrapper,
-  Column,
   UserPicture,
 } from "./styles";
 
-function Header({ authenticated }) {
+import { IHeader } from "./types";
+
+const Header: React.FC<IHeader> = ({ authenticated }: IHeader) => {
   const navigate = useNavigate();
 
   return (
@@ -45,11 +46,7 @@ function Header({ authenticated }) {
             <UserPicture src="https://avatars.githubusercontent.com/u/21126750?v=4" />
           ) : (
             <>
-              <MenuRight
-                to={'/'}
-              >
-                Home
-              </MenuRight>
+              <MenuRight to={"/"}>Home</MenuRight>
               <Button
                 title={"Entrar"}
                 onClick={() => {
@@ -63,6 +60,6 @@ function Header({ authenticated }) {
       </Container>
     </Wrapper>
   );
-}
+};
 
 export default Header;

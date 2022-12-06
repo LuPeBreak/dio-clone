@@ -1,8 +1,9 @@
 import React from "react";
 
 import { Container, NameText, Progress, UserPicture } from "./styles";
+import { IUserInfo } from "./types";
 
-function UserInfo({ name, img, percentual }) {
+const UserInfo = ({ name, img, percentual }: IUserInfo) => {
   return (
     <Container>
       <UserPicture src={img} />
@@ -12,6 +13,6 @@ function UserInfo({ name, img, percentual }) {
       </div>
     </Container>
   );
-}
+};
 
 export default UserInfo;

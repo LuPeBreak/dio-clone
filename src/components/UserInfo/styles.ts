@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IUserInfoStyled } from "./types";
 
 export const Container = styled.div`
   display: flex;
@@ -23,22 +24,21 @@ export const NameText = styled.div`
   color: #fff;
 `;
 
-
-export const Progress = styled.div`
+export const Progress = styled.div<IUserInfoStyled>`
   width: 180px;
   height: 6px;
   background-color: #fff;
   border-radius: 3px;
   position: relative;
 
-  &::after{
+  &::after {
     content: "";
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
-    width: ${({percentual})=>percentual}%;
+    width: ${({ percentual }) => percentual}%;
     height: 6px;
     border-radius: 3px;
-    background-color: #23DD7A;
+    background-color: #23dd7a;
   }
-`
+`;
