@@ -53,7 +53,12 @@ const Header: React.FC<IHeader> = ({ authenticated }: IHeader) => {
                   navigate("/login");
                 }}
               />
-              <Button title={"Cadastrar"} />
+              <Button
+                title={"Cadastrar"}
+                onClick={() => {
+                  navigate("/register");
+                }}
+              />
             </>
           )}
         </Row>

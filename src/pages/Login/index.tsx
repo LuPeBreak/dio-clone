@@ -21,6 +21,7 @@ import {
   TitleLogin,
   Wrapper,
 } from "./styles";
+
 import { IFormData } from "./types";
 
 const schema = yup
@@ -39,11 +40,13 @@ export default function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm<IFormData>({ resolver: yupResolver(schema), mode: "onChange" });
+  
+  const navigate = useNavigate();
 
-  const onSubmit = async (formaData: IFormData) => {
+  const onSubmit = async (formData: IFormData) => {
     try {
       const { data } = await api.get(
-        `users?email=${formaData.email}&senha=${formaData.password}`
+        `users?email=${formData.email}&senha=${formData.password}`
       );
       if (data.length === 1) {
         navigate("/feed");
@@ -55,10 +58,7 @@ export default function Login() {
     }
   };
 
-  const navigate = useNavigate();
-  const handleClickSignIn = () => {
-    navigate("/feed");
-  };
+
 
   return (
     <>
